@@ -25,6 +25,13 @@ model User {
   sessions Session[]
 }
 
+model Todo {
+  id        Int      @default(autoincrement()) @id
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  text      String
+}
+
 model Session {
   id                 Int       @id @default(autoincrement())
   createdAt          DateTime  @default(now())
