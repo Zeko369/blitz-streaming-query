@@ -32,7 +32,7 @@ const handleRevalidations = <T extends z.infer<typeof tmp>, C, K>(fn: (args: T['
 const createTodoFn = resolver.pipe(
   resolver.zod(createTodoSchema),
   handleRevalidations(async (args, ctx) => {
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    // await new Promise((resolve) => setTimeout(resolve, 500));
 
     return db.todo.create({data: args});
   })
